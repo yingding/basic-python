@@ -10,7 +10,7 @@ def main():
     # 0xYYYYY is the hex representtion of number
     # sys.maxsize returns the max int value (32bit, 2^32 -1 with zero)
     # max negative int is -sys.maxsize-1 (32bit), but it switch to long automatically 
-    l = [8, 9, 15, int(0b1000010001),int(0b10101101011100111111), int(0b1010110101101010101111100110001111) , 0, -9, -8, sys.maxsize, -sys.maxsize-1, -sys.maxsize - 9]
+    l = [8, 9, 15, 100, int(0b1000010001),int(0b10101101011100111111), int(0b1010110101101010101111100110001111) , 0, -9, -8, sys.maxsize, -sys.maxsize-1, -sys.maxsize - 9]
     for e in l:
         # timer seconds as float
         t1 = timer()
