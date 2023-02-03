@@ -46,6 +46,11 @@ ord('a')
 >>> f'{6:08b}'
 '00000110'
 ```
+or
+```python3
+>>> bin(9)
+'0b1001'
+```
 
 Reference: 
 * very good intro regarding to binary shift and binary operation in pytion https://realpython.com/python-bitwise-operators/
