@@ -1,3 +1,5 @@
+import sys
+
 a = ord('a')
 z = ord('z')
 
@@ -56,5 +58,23 @@ print(10)
 print(0x10)
 
 print(len("00000000000000000000000000000000000000000000000000000000000"))
+
+# binary format of 9
+def bin_format(n: int) -> str:
+    return f"{n:b}"
+
+print(bin_format(9))
+print(bin_format(sys.maxsize))
+print(bin_format(-sys.maxsize-1))
+print(bin_format(-sys.maxsize-1).strip('0').split("1"))
+
+print(max("000", "00"))
+
+print("110100111100001".split("1"))
+
+
+#right answer: def solution(N):
+#return len(max(format(N, 'b').strip('0').split('1')))
+#return len(max(format(N, 'b').strip('0').split('1')))
 
 

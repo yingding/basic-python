@@ -8,8 +8,8 @@ maximal sequence of consecutive zeros
 * 1000 no gap
 * -9 = '-0b1001' Gap = 2 zero
 
-## using bit shift right
-* Algo solution is in file `main.py`
+## Solution1: Using bit shift right
+* Implementation is in file `solution1.py`
 * file `test.py` contains some useful method to get used with bitwise op and bitwise shift op and python buildin functions
 
 Sketch of algo: 
@@ -20,6 +20,25 @@ Sketch of algo:
 5. use the information in previous and current least significant bit and cached current binary gap length to determin action
 6. special case of negative number, the shift right will encounter the leading sign, so need to convert to positive number first. 
 
+## Solution2: use internal property that gap are enclosed by two 1s
+* Implementation is in file `solution2.py`
+
+Sketch of algo:
+1. negate the negative number
+2. use `f"{n:b}"` to output the string representation of binary number
+3. tailer the leading and tailing 0, `strip("0")`
+4. split the string by `1` with `split("1")`, between `1` and `1`, the split will be `` and empty string.
+5. max the size of the string element in the splited list to find the max len `max(binary_str.split("1")`
+6. return the `len(max(list))``
+
+General idea
+```python
+n = abs(n)
+list_gaps = f"{n:b}".strip('0').split('1')
+len(max(list_gaps))
+```
+
+This string split solution has some copy over of string, since the binary representation of very large number is still in magnitude of 1000, the string `split` and `len` solution is faster than the binary shift solution.
 
 Notice:
 * python has no sign bit
