@@ -72,6 +72,8 @@ print(max("000", "00"))
 
 print("110100111100001".split("1"))
 
+print(["2","2"].index)
+
 
 #right answer: def solution(N):
 #return len(max(format(N, 'b').strip('0').split('1')))

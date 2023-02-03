@@ -40,6 +40,15 @@ len(max(list_gaps))
 
 This string split solution has some copy over of string, since the binary representation of very large number is still in magnitude of 1000, the string `split` and `len` solution is faster than the binary shift solution.
 
+## Solution 3, counting the sequence from the leading most significant bit
+* Implementation is in file `solution1.py`
+
+Sketch of Algo:
+1. hit 1 by update the global max, and clear the local sequence of zero count
+2. hit 0 by update the local sequence of zero count
+3. since the binary string of integer always starts with zero, so the first zero can be considered as binary gap
+4. WARNING: do not start from the tailing least significat bit, since the tailing bit will not always be 1, this simple algorithm will not work.
+
 Notice:
 * python has no sign bit
 https://realpython.com/python-bitwise-operators/

@@ -1,5 +1,6 @@
 import solution1
 import solution2
+import solution3
 import sys
 from timeit import default_timer as timer
 
@@ -14,20 +15,27 @@ def main():
     has_warning = False
     waring_list = []
     for e in l:
+        time_list = []
+        solution_list = []
         # timer seconds as float
         t1 = timer()
-        s1_gap = solution1.binary_gap(e)
+        solution_list.append(solution1.binary_gap(e))
         t2 = timer()
-        s2_gap = solution2.binary_gap(e)
+        solution_list.append(solution2.binary_gap(e))
         t3 = timer()
-        time_1 = t2-t1
-        time_2 = t3-t2
+        solution_list.append(solution3.binary_gap(e))
+        t4 = timer()
+        time_list.append(t2-t1)
+        time_list.append(t3-t2)
+        time_list.append(t4-t3)
         print("#" * 10)
         print(f"binary_gap for {e} = {bin(e)}")
-        print(f"s1: gap size {s1_gap} in secs as float {time_1}")
-        print(f"s2: gap size {s2_gap} in secs as float {time_2}")
-        print(f"{'solution1' if (time_1 < time_2) else 'solution2'} is faster.")
-        if (s1_gap != s2_gap):
+        print(f"s1: gap size {solution_list[0]} in secs as float {time_list[0]}")
+        print(f"s2: gap size {solution_list[1]} in secs as float {time_list[1]}")
+        print(f"s3: gap size {solution_list[2]} in secs as float {time_list[2]}")
+        # index of the best solution, + 1 is the solution id, since index of solution 1 is 0
+        print(f"solution{min(range(len(time_list)), key=time_list.__getitem__) + 1} is faster.")
+        if (len(set(solution_list)) > 1):
             has_warning = True
             waring_list.append(e)
             print("WARNING: different solution found.")
