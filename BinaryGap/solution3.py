@@ -8,6 +8,7 @@ def binary_gap(n: int):
     # while hit zero just count the local
     # Note, you shall not starting from the tailing zeros, since the tail are not always start with 1.
     for k in N:
+        # convert char to int with int('1')
         if int(k) == 0:
             b += 1
         elif int(k) == 1:

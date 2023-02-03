@@ -80,6 +80,21 @@ or
 '0b1001'
 ```
 
+## split string into char
+```python3
+>>> print([a for a in "123"])
+['1', '2', '3']
+>>> print(list("123"))
+['1', '2', '3']
+```
+
+## index max of a list
+```python3
+>>> list = [2,2,10]
+>>> max(range(len(list)), key=list.__getitem__)
+2
+```
+
 Reference: 
 * very good intro regarding to binary shift and binary operation in pytion https://realpython.com/python-bitwise-operators/
 * how to convert int to binary in python with bin function : https://stackoverflow.com/questions/10411085/converting-integer-to-binary-in-python/10411108#10411108

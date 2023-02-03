@@ -74,6 +74,10 @@ print("110100111100001".split("1"))
 
 print(["2","2"].index)
 
+# split string into char list
+print([a for a in "123"])
+print(list("123"))
+
 
 #right answer: def solution(N):
 #return len(max(format(N, 'b').strip('0').split('1')))
